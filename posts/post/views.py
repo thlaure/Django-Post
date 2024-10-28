@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import PostForm, Post
 
 # Create your views here.
 def post_form(request):
+    if (not request.user.is_authenticated):
+        return redirect('login')
+
     form = PostForm(request.POST)
     if form.is_valid():
         form.save()
