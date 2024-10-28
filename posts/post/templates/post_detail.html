@@ -6,6 +6,7 @@
     <title>Post detail - {{ post.title }}</title>
 </head>
 <body>
+    {% include 'login_bar.html' %}
     <h1>{{ post.title }}</h1>
     <p>{{ post.created_at }}</p>
     <p>{{ post.content }}</p>

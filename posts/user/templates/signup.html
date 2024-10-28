@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create post</title>
+    <title>Register user</title>
 </head>
 <body>
     {% include 'login_bar.html' %}
-    <h1>Create post</h1>
-    <form action="/post/create" method="POST">
+    <h1>Registration</h1>
+    <form method="POST">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit">
+        {{ form.as_p }}
+        <button type="submit">Signup</button>
     </form>
+    <a href="{% url 'login' %}">Already have account?</a>
 </body>
 </html>
